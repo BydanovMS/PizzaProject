@@ -1,0 +1,14 @@
+body {
+    background: wheat;
+}
+.nav-link {
+    background: wheat;
+    padding: 5px;
+}
+
+#navigation {
+    background: green;
+    margin: 10px;
+    padding: 10px;
+}
+

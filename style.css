@@ -7,6 +7,10 @@ body {
     font-size: 20px;
 }
 
+.nav-link:hover {
+    color: red;
+}
+
 #navigation {
     background: green;
     margin: 10px;

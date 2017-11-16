@@ -7,13 +7,14 @@ $data = json_decode(file_get_contents('data'), true);
 <!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
 <html lang="en-us">
 
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script src="main.js"></script>
 <head>
 <meta charset="utf-8">
 <title>Пиццерия</title>
 
 <link rel="stylesheet" href="style.css">
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-      <script src="main.js"></script>
+
 </head>
 
 <body>
@@ -43,12 +44,14 @@ $data = json_decode(file_get_contents('data'), true);
   </tbody>
 </table>
 
-<ol>
-<?php foreach ($data as $user): {
-  // code...?>
-
-  <li></li>
-</ol>
+	<ol>
+		<?php foreach ($data as $user): ?>
+		<li><a href="mailto:<?php echo $user["email"] ?>">
+				<?php echo $user["nickname"] ?>
+			</a>
+		</li>
+		<?php endforeach; ?>
+	</ol>
 
 	<form>
 		<div>
@@ -58,11 +61,11 @@ $data = json_decode(file_get_contents('data'), true);
 		
 		<div>
 			<label>введите никнейм</label>
-			<input id="email" type="text"></input>
+			<input id='email' type="text"></input>
 		</div>
 		
 		<div>
-			<button id="new-user-add-btn" type="submit">отправить</button>
+			<button id='new-user-add-btn'>отправить</button>
 		</div>
 	</form>
 

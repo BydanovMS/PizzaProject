@@ -1,3 +1,8 @@
+<?php
+
+$data = json_decode(file_get_contents('data'), true);
+?>
+
 <!DOCTYPE html>
 <!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
 <html lang="en-us">
@@ -7,7 +12,8 @@
 <title>Пиццерия</title>
 
 <link rel="stylesheet" href="style.css">
-
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script src="main.js"></script>
 </head>
 
 <body>
@@ -36,6 +42,29 @@
     </tr>
   </tbody>
 </table>
+
+<ol>
+<?php foreach ($data as $user): {
+  // code...?>
+
+  <li></li>
+</ol>
+
+	<form>
+		<div>
+			<label>введите email</label>
+			<input id="nickname" type="email"></input>
+		</div>
+		
+		<div>
+			<label>введите никнейм</label>
+			<input id="email" type="text"></input>
+		</div>
+		
+		<div>
+			<button id="new-user-add-btn" type="submit">отправить</button>
+		</div>
+	</form>
 
 </body>
 </html>

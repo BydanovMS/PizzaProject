@@ -1,6 +1,11 @@
 <?php
+// $pdo = new PDO('mysql:host=localhost;dbname=c9', 'root', '');
+// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo = include "DB.php";
+$data = $pdo->query("select * from users")->fetchAll(PDO::FETCH_ASSOC);
 
-$data = json_decode(file_get_contents('data'), true);
+var_dump($data);
+// $data = json_decode(file_get_contents('data'), true);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +25,7 @@ $data = json_decode(file_get_contents('data'), true);
 <body>
     <h1>Пиццерия</h1> 
     <nav id="navigation">
-        <a class="nav-link" href="main.html">Главная</a>
+        <a class="nav-link" href="main.php">Главная</a>
         <a class="nav-link" href="menu.html">Ассортимент</a>
     </nav>
     <img src="http://my-ideya.ru/wp-content/uploads/2014/05/photo_original_2544.jpg"></img>
@@ -47,7 +52,7 @@ $data = json_decode(file_get_contents('data'), true);
 	<ol>
 		<?php foreach ($data as $user): ?>
 		<li><a href="mailto:<?php echo $user["email"] ?>">
-				<?php echo $user["nickname"] ?>
+				<?php echo htmlspecialchars($user["nickname"]); ?>
 			</a>
 		</li>
 		<?php endforeach; ?>
@@ -65,7 +70,8 @@ $data = json_decode(file_get_contents('data'), true);
 		</div>
 		
 		<div>
-			<button id='new-user-add-btn'>отправить</button>
+			<button id='new-user-add-btn'>создать</button>
+		  <button id='user-del-btn'>удалить</button>
 		</div>
 	</form>
 

@@ -1,14 +1,28 @@
+// $data = json_decode(file_get_contents('data'), true);
+
+// $email = $_POST["email"];
+// $nickname = $_POST["nickname"];
+
+// $data[] = ["email" => $email, "nickname" => $nickname]; //push
+
+// // $data = json_encode(["email" => $email, "nickname" => $nickname]);
+
+// file_put_contents('data', json_encode($data));
+
+// echo "Hello $nickname";
+
 <?php
 
-$data = json_decode(file_get_contents('data'), true);
+$pdo = include("DB.php");
 
-$email = $_POST["email"];
-$nickname = $_POST["nickname"];
+$email = htmlspecialchars($_POST["email"]);
+$nickname = htmlspecialchars($_POST["nickname"]);
 
-$data[] = ["email" => $email, "nickname" => $nickname]; //push
+$sql = "insert into users values(?, ?)";
 
-// $data = json_encode(["email" => $email, "nickname" => $nickname]);
+var_dump($sql);
 
-file_put_contents('data', json_encode($data));
+$statement = $pdo->prepare($sql);
+$statement->execute([$email, $nickname]);
 
 echo "Hello $nickname";

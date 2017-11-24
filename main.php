@@ -61,12 +61,12 @@ var_dump($data);
 	<form>
 		<div>
 			<label>введите email</label>
-			<input id="nickname" type="email"></input>
+			<input id='email' type="email"></input>
 		</div>
 		
 		<div>
 			<label>введите никнейм</label>
-			<input id='email' type="text"></input>
+			<input id="nickname" type="text"></input>
 		</div>
 		
 		<div>

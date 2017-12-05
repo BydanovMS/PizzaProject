@@ -14,12 +14,17 @@ var_dump($data);
 
       <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
       <script src="main.js"></script>
+        <script src="js/bootstrap.js"></script>
 <head>
 <meta charset="utf-8">
-<title>Пиццерия</title>
 
-<link rel="stylesheet" href="style.css">
+<!--старое оформление-->
+  <title>Пиццерия</title>
+  <link rel="stylesheet" href="style.css">
+<!--старое оформление-->
 
+  <title>Bootstrap</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
@@ -70,8 +75,8 @@ var_dump($data);
 		</div>
 		
 		<div>
-			<button id='new-user-add-btn'>создать</button>
-		  <button id='user-del-btn'>удалить</button>
+			<button id='user-add-btn' class="btn btn-success">создать</button>
+		  <button id='user-del-btn' class="btn btn-warning">удалить</button>
 		</div>
 	</form>
 
